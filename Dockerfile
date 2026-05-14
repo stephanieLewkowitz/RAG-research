@@ -103,13 +103,14 @@ EXPOSE 5000
 # Command to run Jupyter Notebook on container start
 # --ip=0.0.0.0 allows connections from outside the container
 # --allow-root is necessary if running as the default root user
-CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8008", "--no-browser", "--allow-root"]
-CMD ["mlflow", "ui", "--host", "0.0.0.0", "--port", "5000"]
+# CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8008", "--no-browser", "--allow-root"]
+# CMD ["mlflow", "ui", "--host", "0.0.0.0", "--port", "5000"]
+CMD bash -c "mlflow ui --host 0.0.0.0 --port 5000 & jupyter notebook --ip=0.0.0.0 --port=8008 --no-browser --allow-root"
 
 
 
 #docker build -t rag-gpu-jupyter .
 # from root dir with data 
-#docker run --gpus all -it -p 8888:8888 -v "$(pwd):/notebooks" -e GOOGLE_APPLICATION_CREDENTIALS="/notebooks/service-account-key.json" --env-file "$(pwd)/.env"  rag-gpu-jupyter
+#docker run --gpus all -it -p 8888:8888 -p 5000:5000 -v "$(pwd):/notebooks" -e GOOGLE_APPLICATION_CREDENTIALS="/notebooks/service-account-key.json" --env-file "$(pwd)/.env"  rag-gpu-jupyter
 
 
