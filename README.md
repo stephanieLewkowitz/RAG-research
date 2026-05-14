@@ -13,7 +13,7 @@ This document explains two complementary architecture diagrams for an AI-powered
 
 The main workflow diagram shows the end-to-end enterprise architecture for a claims call center AI assistant. The system collects policy documents, claims data, call transcripts, customer communications, and external reference materials, processes them into searchable knowledge, and uses Retrieval-Augmented Generation to help claims agents answer customer questions with grounded, source-backed responses.
 
-This diagram is intentionally simplified for business and interview discussion. It focuses on the flow of information from source systems to agent support, while still showing the major production concerns: ingestion, OCR, speech-to-text, vector search, RAG, monitoring, feedback, security, and compliance.
+This diagram focuses on the flow of information from source systems to agent support, while still showing the major production concerns: ingestion, OCR, speech-to-text, vector search, RAG, monitoring, feedback, security, and compliance.
 
 ---
 
